@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-onboarding',
@@ -16,7 +18,9 @@ export class OnboardingComponent implements OnInit {
   ssn:string
   bday:string
   gender:string
-  constructor() 
+  telName: string
+  file: string
+  constructor(private http: HttpClient) 
   {
     this.email="";
     this.firstName="";
@@ -26,18 +30,34 @@ export class OnboardingComponent implements OnInit {
     this.ssn="";
     this.bday="";
     this.gender="";
+    this.telName="";
+    this.file="";
   }
 
   ngOnInit(): void {
-    return this.http.post(this.email, httpOptions);
-    return this.http.post(this.firstName, httpOptions);
-    return this.http.post(this.lastName, httpOptions);
-    return this.http.post(this.preferName, httpOptions);
-    return this.http.post(this.tel, httpOptions);
-    return this.http.post(this.ssn, httpOptions);
-    return this.http.post(this.bday, httpOptions);
-    return this.http.post(this.gender, httpOptions);
     
+  }
+
+  onSubmit() {
+
+    let headers = new HttpHeaders({
+      "Allow-Cross-Origin-Origin0": "*" });
+    let options = { headers: headers };
+
+    let endpoint = "http://localhost:8080/register";
+
+    this.http.post<any>(endpoint, 
+    {"email": this.email,
+    "firstName": this.firstName, 
+    "lastName": this.lastName,
+    "preferName": this.preferName,
+    "tel": this.tel,
+    "ssn": this.ssn,
+    "dbay": this.bday,
+    "gender": this.gender
+  }, options).subscribe(data => 
+    console.log(data));
+
   }
 
 }
