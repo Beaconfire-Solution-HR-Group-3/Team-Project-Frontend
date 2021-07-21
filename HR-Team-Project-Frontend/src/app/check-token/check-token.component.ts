@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
+import { RouterModule, Routes, Router } from '@angular/router';
 @Component({
   selector: 'app-check-token',
   templateUrl: './check-token.component.html',
@@ -9,7 +10,7 @@ import {HttpHeaders} from '@angular/common/http';
 export class CheckTokenComponent implements OnInit {
 
   token:string
-  constructor(private http: HttpClient) 
+  constructor(private http: HttpClient, private router: Router) 
   {
     this.token="";
    }
@@ -26,8 +27,10 @@ export class CheckTokenComponent implements OnInit {
     let endpoint = "http://localhost:8080/checkToken";
 
     this.http.post<any>(endpoint, 
-    {"token": this.token}, options).subscribe(data => 
-    console.log(data));
+    {"token": this.token}, options).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['home']);
+    });
 
   }
 }
