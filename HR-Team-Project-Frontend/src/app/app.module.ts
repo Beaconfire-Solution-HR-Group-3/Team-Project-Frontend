@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TokenComponent } from './token/token.component';
+import { CheckTokenComponent } from './check-token/check-token.component';
+import { CheckUserNameComponent } from './check-user-name/check-user-name.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OnboardingComponent,
+    TokenComponent,
+    CheckTokenComponent,
+    CheckUserNameComponent,
   ],
   imports: [
     BrowserModule,
