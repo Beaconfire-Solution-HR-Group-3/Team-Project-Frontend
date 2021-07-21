@@ -1,57 +1,31 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
-
-    <!-- Navbar brand -->
-    <mdb-navbar-brand><a class="navbar-brand" href="#">Hire Resource System</a></mdb-navbar-brand>
-  
-    <!-- Collapsible content -->
-    <links>
-  
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Hire Resource System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link waves-light" mdbWavesEffect routerLink="/checkToken">Register<span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/checkToken">Register<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect routerLink="/homepage">Homepage</a>
+          <a class="nav-link" routerLink="/homepage">Homepage</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect routerLink="/hire">Hire</a>
+          <a class="nav-link" routerLink="/hire">Hire</a>
         </li>
-  
-  
-      </ul>
-      <!-- Links -->
-  
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item">
-          <a class="nav-link">
-            <mdb-icon fab icon="twitter"></mdb-icon>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <mdb-icon fab icon="google-plus"></mdb-icon>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <div class="btn-group" mdbDropdown>
-              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
-              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="divider dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
         </li>
       </ul>
-    </links>
-    <!-- Collapsible content -->
+    </div>
+  </nav>
   
-  </mdb-navbar>
-  <!--/.Navbar-->
-
+<router-outlet></router-outlet>

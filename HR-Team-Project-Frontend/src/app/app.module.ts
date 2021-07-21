@@ -9,7 +9,6 @@ import { TokenComponent } from './token/token.component';
 import { CheckTokenComponent } from './check-token/check-token.component';
 import { CheckUserNameComponent } from './check-user-name/check-user-name.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +22,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,    
-    MDBBootstrapModule.forRoot(),
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

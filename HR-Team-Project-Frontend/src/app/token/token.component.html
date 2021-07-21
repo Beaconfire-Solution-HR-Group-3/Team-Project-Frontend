@@ -1,4 +1,14 @@
-<div>
-    Email: <input type="text" name="email" [(ngModel)]="email">
+<p class="alert alert-success" *ngIf="successGenerate && sent">Succeed to generate token and send email to {{email}}!</p>
+<p class="alert alert-warning" *ngIf="!successGenerate && sent">Failed to generate token and send email to {{email}}!</p>
+<div [ngClass]="'centerDiv'">
+    <form>
+        <div class="form-group">
+            Email: 
+            <br>
+            <input type="text" name="email" [(ngModel)]="email">
+        </div>
+        <button class="btn btn-dark" (click)="Generate()">Generate Token and Send Email</button>
+
+    </form>
+    
 </div>
-<button (click)="Generate()">Generate Token and Send Email</button>

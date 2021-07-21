@@ -11,6 +11,8 @@ import { RouterModule, Routes, Router } from '@angular/router';
 export class TokenComponent implements OnInit {
 
   email:string;
+  successGenerate = false;
+  sent = false;
 
   constructor(private http: HttpClient, private router: Router) {
     this.email="";
@@ -21,16 +23,19 @@ export class TokenComponent implements OnInit {
 
   Generate(){
     let headers = new HttpHeaders({
-      "Allow-Cross-Origin-Origin0": "*" });
+      "Access-Control-Allow-Origin": "*"
+    });
     let options = { headers: headers };
 
     let endpoint = "http://localhost:8080/token";
 
-    this.http.post<any>(endpoint, 
-    {"email": this.email}, options).subscribe(data => 
+    this.http.post<any>(endpoint, {"email": this.email}, options).subscribe(data => 
     {
-      console.log(data);
-      //this.router.navigate(['home']);
+      this.sent = true;
+      if(data.statusCode == "OK"){
+        this.successGenerate = true;
+      }
+      
     });
 
   }
