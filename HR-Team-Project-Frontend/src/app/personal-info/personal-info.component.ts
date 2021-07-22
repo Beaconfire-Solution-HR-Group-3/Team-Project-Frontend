@@ -6,8 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-info.component.css']
 })
 export class PersonalInfoComponent implements OnInit {
+  bday:string
+  file:string
+  workauth:string
+  wsd:string
+  wed:string
+  esd:string
+  eed:string
 
-  constructor() { }
+
+  constructor() { 
+    this.bday="";
+    this.file="";
+    this.workauth="";
+    this.wsd="";
+    this.esd="";
+    this.wed="";
+    this.eed="";
+
+    }
 
   ngOnInit(): void {
   }

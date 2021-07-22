@@ -13,25 +13,68 @@ export class OnboardingComponent implements OnInit {
   filedata:any
   firstName:string
   lastName:string
+  middleName:string
   preferName:string
   tel:string
+  workPhone:string
   ssn:string
   bday:string
   gender:string
   telName: string
   file: string
+  sday:string
+  eday:string
+  workfile:string
+  isGreenCard:boolean = false;
+  isDriveLicense:string = "";
+  driveNumber:string;
+  expiraDay:string;
+  driveLicense:string;
+  reffirstName:string;
+  refmiddleName:string;
+  reflastName:string;
+  reftelName:string;
+  refemail:string;
+  relationship:string;
+  emfirstName:string;
+  emmiddleName:string;
+  emlastName:string;
+  emtelName:string;
+  ememail:string;
+  emrelationship:string;
+
   constructor(private http: HttpClient) 
   {
     this.email="";
     this.firstName="";
     this.lastName="";
+    this.middleName="";
     this.preferName="";
     this.tel="";
+    this.workPhone="";
     this.ssn="";
     this.bday="";
     this.gender="";
     this.telName="";
     this.file="";
+    this.sday="";
+    this.eday="";
+    this.workfile="";
+    this.driveNumber="";
+    this.expiraDay="";
+    this.driveLicense="";
+    this.reffirstName="";
+    this.refmiddleName="";
+    this.reflastName="";
+    this.reftelName="";
+    this.refemail="";
+    this.relationship="";
+    this.emfirstName="";
+    this.emmiddleName="";
+    this.emlastName="";
+    this.emtelName="";
+    this.ememail="";
+    this.emrelationship="";
   }
 
   ngOnInit(): void {
