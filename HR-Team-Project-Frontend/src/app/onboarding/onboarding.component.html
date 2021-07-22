@@ -46,7 +46,63 @@
         <input type="radio" name="gender" value="male"[(ngModel)]="gender"> male<br>
       </label>
       <br>
+      <div id="visa">
+        <label>
+         Are you a citizen or permanent resident of the U.S? 
+        <select name="visaOption" id="isCitizen" onchange="addtext()">
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+        </label>
+        <div id="itisCitizen">
+          <label>
+            type:
+            <input type="radio" name="isGreenCard" value="False"[(ngModel)]="isGreenCard"> Citizen
+            <input type="radio" name="isGreenCard" value="True"[(ngModel)]="isGreenCard"> Green Card<br>
+          </label>
+          <br>
+        </div>
+        <div id="notCitizen">
+          <label>
+            What is your work authiruzation? 
+           <select name="workauth" id="workauth">
+             <option value="1">F1(CPT|OPT)</option>
+             <option value="2">Other</option>
+           </select>
+           </label>
+           <label>
+            Start Date:
+            <input type="date" name="sday"[(ngModel)]="sday">
+          </label>
+          <br>
+          <label>
+            End Date:
+            <input type="date" name="eday"[(ngModel)]="eday">
+          </label>
+          <br>
+          <label>
+            Please Upload your work authorization
+            <input type="file" name="workfile"[(ngModel)]="workfile">
+          </label>
+          <br>
+        </div>
+      </div>
       <button class="btn btn-dark">Submit</button>
     </form>
   </div>
+
+  <script>
+    function addtext(){
+      console.log("123");
+        var v=document.getElementById('isCitizen').value;
+        if(v==1){
+           document.getElementById('notCitizen').hidden=true;
+           document.getElementById('itisCitizen').hidden=false;
+        }else{
+            document.getElementById('itisCitizen').hidden=true;
+            document.getElementById('notCitizen').hidden=false;
+        }
+
+    }
+  </script>
   

@@ -9,6 +9,7 @@ import { TokenComponent } from './token/token.component';
 import { CheckTokenComponent } from './check-token/check-token.component';
 import { CheckUserNameComponent } from './check-user-name/check-user-name.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PersonalInfoComponent } from './personal-info/personal-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     CheckTokenComponent,
     CheckUserNameComponent,
     HomePageComponent,
+    PersonalInfoComponent,
   ],
   imports: [
     BrowserModule,
