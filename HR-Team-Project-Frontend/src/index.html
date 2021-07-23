@@ -46,6 +46,10 @@
     }
     
     </script>
+</head>
+<body onload="script();">
+  <app-root></app-root>
+</body>
 <script>
   const paragraph = document.getElementById("edit");
   const paragraph1 = document.getElementById("edit1");
@@ -118,6 +122,7 @@
       document.getElementById('eed').disabled=true;
   } )
   edit_button1.addEventListener("click", function() {
+     console.log("button_address");
       paragraph3.contentEditable = true;
       paragraph4.contentEditable = true;       
   } );
@@ -128,6 +133,7 @@
       paragraph4.contentEditable = false;
   } )
   edit_button2.addEventListener("click", function() {
+    console.log("button_below");
       paragraph5.contentEditable = true;
       paragraph6.contentEditable = true;
       paragraph7.contentEditable = true;
@@ -170,8 +176,4 @@
       paragraph12.contentEditable = false;
   } )
 </script>
-</head>
-<body>
-  <app-root></app-root>
-</body>
 </html>

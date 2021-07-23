@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { SharedServiceService } from '../service/shared-service.service'
 @Component({
   selector: 'app-check-token',
   templateUrl: './check-token.component.html',
@@ -10,7 +11,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 export class CheckTokenComponent implements OnInit {
 
   token:string;
-  constructor(private http: HttpClient, private router: Router) 
+  constructor(private http: HttpClient, private router: Router, private sharedServiceService :SharedServiceService) 
   {
     this.token="";
    }
@@ -28,7 +29,7 @@ export class CheckTokenComponent implements OnInit {
     console.log(this.token);
     this.http.post<any>(endpoint, 
     {"token": this.token}, options).subscribe(data => {
-      
+      this.sharedServiceService.email=data.email;
       this.router.navigate(['checkUserName']);
     });
 

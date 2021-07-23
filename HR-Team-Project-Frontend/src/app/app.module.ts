@@ -11,6 +11,11 @@ import { CheckUserNameComponent } from './check-user-name/check-user-name.compon
 import { HomePageComponent } from './home-page/home-page.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { SharedServiceService } from './service/shared-service.service';
+import { VisaStatusManagementComponent } from './visa-status-management/visa-status-management.component';
+import { HouseComponent } from './house/house.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +26,8 @@ import { DocumentsComponent } from './documents/documents.component';
     HomePageComponent,
     PersonalInfoComponent,
     DocumentsComponent,
+    VisaStatusManagementComponent,
+    HouseComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,9 @@ import { DocumentsComponent } from './documents/documents.component';
     FormsModule,
     HttpClientModule, 
   ],
-  providers: [],
+  providers: [
+    SharedServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

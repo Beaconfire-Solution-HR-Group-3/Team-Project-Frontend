@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
+import { SharedServiceService } from '../service/shared-service.service';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-onboarding',
@@ -15,6 +17,12 @@ export class OnboardingComponent implements OnInit {
   lastName:string
   middleName:string
   preferName:string
+  addressLine1:string
+  addressLine2:string
+  city:string
+  stateAbbr:string
+  stateName:string
+  zipCode:string
   tel:string
   workPhone:string
   ssn:string
@@ -43,13 +51,19 @@ export class OnboardingComponent implements OnInit {
   ememail:string;
   emrelationship:string;
 
-  constructor(private http: HttpClient) 
+  constructor(private http: HttpClient, private router: Router, private sharedServiceService :SharedServiceService) 
   {
-    this.email="";
+    this.email=this.sharedServiceService.email;
     this.firstName="";
     this.lastName="";
     this.middleName="";
     this.preferName="";
+    this.addressLine1="";
+    this.addressLine2="";
+    this.city="";
+    this.stateAbbr="";
+    this.stateName="";
+    this.zipCode="";
     this.tel="";
     this.workPhone="";
     this.ssn="";
@@ -93,13 +107,15 @@ export class OnboardingComponent implements OnInit {
     {"email": this.email,
     "firstName": this.firstName, 
     "lastName": this.lastName,
-    "preferName": this.preferName,
-    "tel": this.tel,
+    "preferedName": this.preferName,
+    "alternatePhone": this.workPhone,
+    "cellphone": this.tel,
     "ssn": this.ssn,
     "dbay": this.bday,
     "gender": this.gender
   }, options).subscribe(data => 
     console.log(data));
+    this.router.navigate(['documents']);
 
   }
 

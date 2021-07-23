@@ -7,6 +7,7 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { DocumentsComponent } from './documents/documents.component'
+import { VisaStatusManagementComponent } from './visa-status-management/visa-status-management.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -16,7 +17,9 @@ const routes: Routes = [
   {path: 'onboarding', component: OnboardingComponent},
   {path: 'hire', component: TokenComponent},
   {path: 'personalInfo', component: PersonalInfoComponent},
-  {path: 'documents', component: DocumentsComponent}
+  {path: 'documents', component: DocumentsComponent},
+  {path: 'visaManage', component: VisaStatusManagementComponent},
+  {path: 'house', component: HomePageComponent}
 ];
 
 @NgModule({

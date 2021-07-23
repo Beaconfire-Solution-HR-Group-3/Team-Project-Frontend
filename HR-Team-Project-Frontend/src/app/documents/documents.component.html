@@ -13,8 +13,10 @@
         <div class = "row form-group">
             <div class="col-sm-3 ">Document Name: {{document.title}}</div>
             <div class="col-sm-3 ">Required: {{document.required}}</div>
-            <div class="col-sm-3 "><i class="fas fa-download" (click)="download('document.title')"></i><a >Download Template</a></div>
-            <div class="col-sm-3 "><i class="fas fa-upload" (click)="upload()"></i><a >Uploade Document</a></div>
+            <div class="col-sm-3 "><i class="fas fa-download" (click)="download(document.title)"></i><a >Download Template</a></div>
+            <div class="col-sm-3 ">
+                <input type="file" class="fas fa-upload" (change)="upload($event, document.title)" accept=".pdf">
+            <a >Uploade Document</a></div>
         </div>
         <br>
         </ng-container>
