@@ -38,8 +38,8 @@
         Secondary Address:
        <p id="edit4"><b> Secondary Address</b></p>
        </label>
-       <button type="submit" id="edit-button">Edit</button>
-       <button type="submit" id="end-editing">Done</button>
+       <button type="submit" id="edit-button1">Edit</button>
+       <button type="submit" id="end-editing1">Done</button>
     </div>
     <div class="card">
     <label>
@@ -61,8 +61,8 @@
         Work phone:
        <p id="edit8"><b> Work phone</b></p>
        </label>
-       <button type="submit" id="edit-button">Edit</button>
-       <button type="submit" id="end-editing">Done</button>
+       <button type="submit" id="edit-button2">Edit</button>
+       <button type="submit" id="end-editing2">Done</button>
 </div>
 <div class="card">
     <label>
@@ -94,8 +94,8 @@
         Title:
        <p id="edit9"><b> Title</b></p>
        </label>
-       <button type="submit" id="edit-button">Edit</button>
-       <button type="submit" id="end-editing">Done</button>
+       <button type="submit" id="edit-button3">Edit</button>
+       <button type="submit" id="end-editing3">Done</button>
     </div>
     <div class="card">
     <label>
@@ -112,10 +112,133 @@
         Emergency Contact Address:
        <p id="edit12"><b> Address</b></p>
        </label>
-       <button type="submit" id="edit-button">Edit</button>
-       <button type="submit" id="end-editing">Done</button>
+       <button type="submit" id="edit-button4">Edit</button>
+       <button type="submit" id="end-editing4">Done</button>
     </div>
-   
-
-
 </div>
+
+
+<script>
+    const paragraph = document.getElementById("edit");
+    const paragraph1 = document.getElementById("edit1");
+    const paragraph2 = document.getElementById("edit2");
+    const paragraph3 = document.getElementById("edit3");
+    const paragraph4 = document.getElementById("edit4");
+    const paragraph5 = document.getElementById("edit5");
+    const paragraph6 = document.getElementById("edit6");
+    const paragraph7 = document.getElementById("edit7");
+    const paragraph8 = document.getElementById("edit8");
+    const paragraph9 = document.getElementById("edit9");
+    const paragraph10 = document.getElementById("edit10");
+    const paragraph11 = document.getElementById("edit11");
+    const paragraph12 = document.getElementById("edit12");
+    const edit_button = document.getElementById("edit-button");
+    const end_button = document.getElementById("end-editing");
+    const edit_button1 = document.getElementById("edit-button1");
+    const end_button1 = document.getElementById("end-editing1");
+    const edit_button2 = document.getElementById("edit-button2");
+    const end_button2 = document.getElementById("end-editing2");
+    const edit_button3 = document.getElementById("edit-button3");
+    const end_button3 = document.getElementById("end-editing3");
+    const edit_button4 = document.getElementById("edit-button4");
+    const end_button4 = document.getElementById("end-editing4");
+    edit_button.addEventListener("click", function() {
+        paragraph.contentEditable = true;
+        paragraph1.contentEditable = true;
+        paragraph2.contentEditable = true;
+        paragraph3.contentEditable = true;
+        paragraph4.contentEditable = true;
+        paragraph5.contentEditable = true;
+        paragraph6.contentEditable = true;
+        paragraph7.contentEditable = true;
+        paragraph8.contentEditable = true;
+        paragraph9.contentEditable = true;
+        paragraph10.contentEditable = true;
+        paragraph11.contentEditable = true;
+        paragraph12.contentEditable = true;
+        document.getElementById('bd').disabled=false;
+        document.getElementById('file').disabled=false;
+        document.getElementById('workauth').disabled=false;
+        document.getElementById('wsd').disabled=false;
+        document.getElementById('wed').disabled=false;
+        document.getElementById('esd').disabled=false;
+        document.getElementById('eed').disabled=false;
+    } );
+
+    end_button.addEventListener("click", function() {
+    paragraph.contentEditable = false;
+    paragraph1.contentEditable = false;
+    paragraph2.contentEditable = false;
+    paragraph3.contentEditable = false;
+        paragraph4.contentEditable = false;
+        paragraph5.contentEditable = false;
+        paragraph6.contentEditable = false;
+        paragraph7.contentEditable = false;
+        paragraph8.contentEditable = false;
+        paragraph9.contentEditable = false;
+        paragraph10.contentEditable = false;
+        paragraph11.contentEditable = false;
+        paragraph12.contentEditable = false;
+        document.getElementById('bd').disabled=true;
+        document.getElementById('file').disabled=true;
+        document.getElementById('bd').disabled=true;
+        document.getElementById('file').disabled=true;
+        document.getElementById('workauth').disabled=true;
+        document.getElementById('wsd').disabled=true;
+        document.getElementById('wed').disabled=true;
+        document.getElementById('esd').disabled=true;
+        document.getElementById('eed').disabled=true;
+    } )
+    edit_button1.addEventListener("click", function() {
+        paragraph3.contentEditable = true;
+        paragraph4.contentEditable = true;       
+    } );
+
+    end_button1.addEventListener("click", function() {
+
+        paragraph3.contentEditable = false;
+        paragraph4.contentEditable = false;
+    } )
+    edit_button2.addEventListener("click", function() {
+        paragraph5.contentEditable = true;
+        paragraph6.contentEditable = true;
+        paragraph7.contentEditable = true;
+        paragraph8.contentEditable = true;
+    } );
+
+    end_button2.addEventListener("click", function() {
+        paragraph5.contentEditable = false;
+        paragraph6.contentEditable = false;
+        paragraph7.contentEditable = false;
+        paragraph8.contentEditable = false;
+    } )
+    edit_button3.addEventListener("click", function() {
+        paragraph9.contentEditable = true;
+        document.getElementById('file').disabled=false;
+        document.getElementById('workauth').disabled=false;
+        document.getElementById('wsd').disabled=false;
+        document.getElementById('wed').disabled=false;
+        document.getElementById('esd').disabled=false;
+        document.getElementById('eed').disabled=false;
+    } );
+
+    end_button3.addEventListener("click", function() {
+        paragraph9.contentEditable = false;
+        document.getElementById('workauth').disabled=true;
+        document.getElementById('wsd').disabled=true;
+        document.getElementById('wed').disabled=true;
+        document.getElementById('esd').disabled=true;
+        document.getElementById('eed').disabled=true;
+    } )
+    edit_button4.addEventListener("click", function() {
+        paragraph10.contentEditable = true;
+        paragraph11.contentEditable = true;
+        paragraph12.contentEditable = true;
+    } );
+
+    end_button4.addEventListener("click", function() {
+        paragraph10.contentEditable = false;
+        paragraph11.contentEditable = false;
+        paragraph12.contentEditable = false;
+    } )
+ </script>
