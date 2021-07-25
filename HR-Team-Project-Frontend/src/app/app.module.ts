@@ -17,6 +17,13 @@ import { HouseComponent } from './house/house.component';
 import { HousingComponent } from './housing/housing.component';
 import { FacilityReportComponent } from './facility-report/facility-report.component';
 import { FacilityCommentComponent } from './facility-comment/facility-comment.component';
+import { OneOptEadComponent } from './visa-status-management/one-opt-ead/one-opt-ead.component';
+import { TwoFill983Component } from './visa-status-management/two-fill983/two-fill983.component';
+import { ThreeWait983Component } from './visa-status-management/three-wait983/three-wait983.component';
+import { FourUploadI20Component } from './visa-status-management/four-upload-i20/four-upload-i20.component';
+import { FiveOptStemComponent } from './visa-status-management/five-opt-stem/five-opt-stem.component';
+import { SixOptStemEadComponent } from './visa-status-management/six-opt-stem-ead/six-opt-stem-ead.component';
+import { FinalComponent } from './visa-status-management/final/final.component';
 
 
 @NgModule({
@@ -34,6 +41,13 @@ import { FacilityCommentComponent } from './facility-comment/facility-comment.co
     HousingComponent,
     FacilityReportComponent,
     FacilityCommentComponent,
+    OneOptEadComponent,
+    TwoFill983Component,
+    ThreeWait983Component,
+    FourUploadI20Component,
+    FiveOptStemComponent,
+    SixOptStemEadComponent,
+    FinalComponent,
   ],
   imports: [
     BrowserModule,
