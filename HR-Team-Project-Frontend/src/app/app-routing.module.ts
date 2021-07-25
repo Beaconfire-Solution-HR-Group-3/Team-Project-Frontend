@@ -8,7 +8,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { DocumentsComponent } from './documents/documents.component'
 import { VisaStatusManagementComponent } from './visa-status-management/visa-status-management.component';
-
+import { HousingComponent } from './housing/housing.component';
+import { FacilityReportComponent } from './facility-report/facility-report.component';
+import { FacilityCommentComponent } from './facility-comment/facility-comment.component';
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'homepage',  component: HomePageComponent},
@@ -19,7 +21,10 @@ const routes: Routes = [
   {path: 'personalInfo', component: PersonalInfoComponent},
   {path: 'documents', component: DocumentsComponent},
   {path: 'visaManage', component: VisaStatusManagementComponent},
-  {path: 'house', component: HomePageComponent}
+  {path: 'house', component: HomePageComponent},
+  {path: 'housing', component: HousingComponent},
+  {path: 'facilityreport', component: FacilityReportComponent},
+  {path: 'facilitycomment', component: FacilityCommentComponent},
 ];
 
 @NgModule({

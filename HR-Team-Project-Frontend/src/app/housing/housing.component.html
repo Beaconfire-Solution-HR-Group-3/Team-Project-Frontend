@@ -1,0 +1,13 @@
+<p>housing works!</p>
+<ul>
+    <li *ngFor="let item of address">
+        <h2>{{item.address}}</h2>
+        <ul>
+            <li *ngFor="let info of item.list">
+                {{info.name}}
+                {{info.phone}}
+            </li>
+        </ul>
+    </li>
+</ul>
+

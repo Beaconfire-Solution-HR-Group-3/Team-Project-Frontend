@@ -16,7 +16,7 @@ export class CheckUserNameComponent implements OnInit {
   {
     this.userName="";
     this.password="";
-   }
+  }
 
   ngOnInit(): void {
 

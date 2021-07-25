@@ -14,6 +14,9 @@ import { DocumentsComponent } from './documents/documents.component';
 import { SharedServiceService } from './service/shared-service.service';
 import { VisaStatusManagementComponent } from './visa-status-management/visa-status-management.component';
 import { HouseComponent } from './house/house.component';
+import { HousingComponent } from './housing/housing.component';
+import { FacilityReportComponent } from './facility-report/facility-report.component';
+import { FacilityCommentComponent } from './facility-comment/facility-comment.component';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { HouseComponent } from './house/house.component';
     DocumentsComponent,
     VisaStatusManagementComponent,
     HouseComponent,
+    HousingComponent,
+    FacilityReportComponent,
+    FacilityCommentComponent,
   ],
   imports: [
     BrowserModule,
