@@ -51,7 +51,8 @@
   <app-root></app-root>
 </body>
 <script>
-  const paragraph = document.getElementById("edit");
+  window.onload=function(){
+    const paragraph = document.getElementById("edit");
   const paragraph1 = document.getElementById("edit1");
   const paragraph2 = document.getElementById("edit2");
   const paragraph3 = document.getElementById("edit3");
@@ -175,5 +176,7 @@
       paragraph11.contentEditable = false;
       paragraph12.contentEditable = false;
   } )
+}
+  
 </script>
 </html>
