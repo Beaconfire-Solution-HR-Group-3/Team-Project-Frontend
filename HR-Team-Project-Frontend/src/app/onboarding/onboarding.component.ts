@@ -130,8 +130,8 @@ export class OnboardingComponent implements OnInit {
         "email": this.ememail,
         "cellphone": this.emtelName,
         "relationship": this.emrelationship,
-        "isReference": false,
-        "isEmergency": true
+        "reference": false,
+        "emergency": true
     },
     {
       "fisrtName": this.reffirstName,
@@ -139,8 +139,8 @@ export class OnboardingComponent implements OnInit {
       "email": this.refemail,
       "cellphone": this.reftelName,
       "relationship": this.relationship,
-      "isReference": true,
-      "isEmergency": false
+      "reference": true,
+      "emergency": false
     }
   ],
     "visaStatus":{

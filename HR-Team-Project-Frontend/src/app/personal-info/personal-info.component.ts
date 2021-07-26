@@ -104,7 +104,7 @@ export class PersonalInfoComponent implements OnInit {
     this.rid=0;
     this.vid=0;
     this.isFalse=false;
-    this.isTrue=false;
+    this.isTrue=true;
 
 
   }
@@ -145,7 +145,7 @@ export class PersonalInfoComponent implements OnInit {
       this.telName=data.cellphone;
       data.contactList.forEach(
         (element:any)=>{
-        if(element.emergency == true){
+        if(element.emergency){
           this.eid = element.id;
           this.emfirstName=element.fisrtName;
           this.emlastName=element.lastName;
@@ -153,7 +153,7 @@ export class PersonalInfoComponent implements OnInit {
           this.ememail=element.email;
           this.emrelationship=element.relationship;
         }
-        if(element.reference == true){
+        if(element.reference){
           this.rid = element.id;
           this.reffirstName=element.fisrtName;;
           this.reflastName=element.lastName;
@@ -206,8 +206,8 @@ export class PersonalInfoComponent implements OnInit {
           "email": this.ememail,
           "cellphone": this.emtelName,
           "relationship": this.emrelationship,
-          "isReference": this.isFalse,
-          "isEmergency": this.isTrue
+          "reference": this.isFalse,
+          "emergency": this.isTrue
       },
       {
         "id": this.rid,
@@ -216,8 +216,8 @@ export class PersonalInfoComponent implements OnInit {
         "email": this.refemail,
         "cellphone": this.reftelName,
         "relationship": this.relationship,
-        "isReference": this.isTrue,
-        "isEmergency": this.isFalse
+        "reference": this.isTrue,
+        "emergency": this.isFalse
       }
     ],
       "visaStatus":{
