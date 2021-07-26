@@ -37,7 +37,7 @@ export class TwoFill983Component implements OnInit {
   }
 
   Next(){
-      this.router.navigate(['visaManage/three']);
+      this.router.navigate(['visaManage/3']);
   }
 
   showFunc(){

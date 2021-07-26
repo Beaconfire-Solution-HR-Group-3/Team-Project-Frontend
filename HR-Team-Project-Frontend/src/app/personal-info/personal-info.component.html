@@ -125,21 +125,36 @@
         paragraph12.contentEditable = false;
     } )
   </script>
-<div id="container1">
+    <div class="row centerDiv">
+    <div class="column" style="background-color:#eee;">
     <div class="card">
+        <div class="card-header text-white bg-danger">
+            Name Section
+          </div>
+          <div class="card-body">
     <label>
      Name:
-    <p id="edit"><b> testname</b></p>
+    <p id="edit" ><b> {{firstName}}, {{lastName}}</b></p>
     </label>
     <br>
     <label>
         PreferName:
-       <p id="edit1"><b> testPname</b></p>
+       <p id="edit1" ><b>{{preferName}} </b></p>
     </label>
     <br>
     <label>
+        Age:
+       <p id="age" ><b> {{age}}</b></p>
+       </label>
+    <br>
+    <label>
+        Gender:
+       <p id="gender"><b> {{gender}}</b></p>
+       </label>
+    <br>
+    <label>
         SSN:
-       <p id="edit2"><b> testSSN</b></p>
+       <p id="edit2"><b> {{ssn}}</b></p>
        </label>
     <br>
     <label>
@@ -152,12 +167,57 @@
         <input type="file" name="filedata"[(ngModel)]="file" id="file" disabled>
     </label>
     <button type="submit" id="edit-button">Edit</button>
-    <button type="submit" id="end-editing">Done</button>
-</div>
-<div class="card">
+    <button type="submit" id="end-editing" (click) = "Submit()">Done</button>
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            Employment Section
+          </div>
+          <div class="card-body">
+        <label>
+            Work Authorization
+           <input type="text" name="workauth"[(ngModel)]="workauth" id="workauth" disabled>
+       </label>
+       <br>
+       <label>
+        Work Authorization Start Date,:
+        <input type="date" name="wsd"[(ngModel)]="wsd" id="wsd" disabled>
+      </label>
+        <br>
+        <label>
+        Work Authorization End Date:
+        <input type="date" name="wed"[(ngModel)]="wed" id="wed" disabled>
+       </label>
+        <br>
+        <label>
+            Employment Start Date:
+            <input type="date" name="esd"[(ngModel)]="esd" id="esd" disabled>
+        </label>
+        <br>
+        <label>
+            Employment End Date:
+            <input type="date" name="eed"[(ngModel)]="eed" id="eed" disabled>
+        </label>
+        <br>
+        <label>
+            Title:
+           <p id="edit9"><b> Title </b></p>
+           </label>
+           <button type="submit" id="edit-button3">Edit</button>
+           <button type="submit" id="end-editing3" (click) = "Submit()">Done</button>
+           </div>
+    </div>  
+    </div>
+    <div class="column" style="background-color:#eee;">
+    <div class="card">
+        <div class="card-header text-white bg-warning">
+            Address Section
+          </div>
+          <div class="card-body">
     <label>
         Primary Address:
-       <p id="edit3"><b> Primary Address</b></p>
+       <p id="edit3"><b> {{addressLine1}}, {{addressLine2}}, {{city}}, {{stateAbbr}}, {{zipCode}}</b></p>
        </label>
     <br>
     <label>
@@ -165,82 +225,74 @@
        <p id="edit4"><b> Secondary Address</b></p>
        </label>
        <button type="submit" id="edit-button1">Edit</button>
-       <button type="submit" id="end-editing1">Done</button>
+       <button type="submit" id="end-editing1" (click) = "Submit()">Done</button>
+       </div>
     </div>
     <div class="card">
-    <label>
-        Personal Email:
-       <p id="edit5"><b> Personal Email</b></p>
-       </label>
-    <br>
-    <label>
-        Work Email:
-       <p id="edit6"><b> Work Email</b></p>
-       </label>
-    <br>
-    <label>
-        Cellphone,:
-       <p id="edit7"><b> Cellphone</b></p>
-       </label>
-    <br>
-    <label>
-        Work phone:
-       <p id="edit8"><b> Work phone</b></p>
-       </label>
-       <button type="submit" id="edit-button2">Edit</button>
-       <button type="submit" id="end-editing2">Done</button>
-</div>
-<div class="card">
-    <label>
-        Work Authorization
-       <input type="file" name="workauth"[(ngModel)]="workauth" id="workauth" disabled>
-   </label>
-   <br>
-   <label>
-    Work Authorization Start Date,:
-    <input type="date" name="wsd"[(ngModel)]="wsd" id="wsd" disabled>
-  </label>
-    <br>
-    <label>
-    Work Authorization End Date:
-    <input type="date" name="wed"[(ngModel)]="wed" id="wed" disabled>
-   </label>
-    <br>
-    <label>
-        Employment Start Date:
-        <input type="date" name="esd"[(ngModel)]="esd" id="esd" disabled>
-    </label>
-    <br>
-    <label>
-        Employment End Date:
-        <input type="date" name="eed"[(ngModel)]="eed" id="eed" disabled>
-    </label>
-    <br>
-    <label>
-        Title:
-       <p id="edit9"><b> Title</b></p>
-       </label>
-       <button type="submit" id="edit-button3">Edit</button>
-       <button type="submit" id="end-editing3">Done</button>
-    </div>
-    <div class="card">
+        <div class="card-header text-white bg-success">
+            Emergency Contact
+          </div>
+          <div class="card-body">
     <label>
         Emergency Contact Full Name:
-       <p id="edit10"><b> Full Name</b></p>
-       </label>
+        <p id="edit10"><b> {{emfirstName}}, {{emlastName}}</b></p>
+        </label>
     <br>
     <label>
         Emergency Contact Phone:
-       <p id="edit11"><b> Phone</b></p>
-       </label>
+        <p id="edit11"><b> {{emtelName}}</b></p>
+        </label>
     <br>
     <label>
         Emergency Contact Address:
-       <p id="edit12"><b> Address</b></p>
-       </label>
-       <button type="submit" id="edit-button4">Edit</button>
-       <button type="submit" id="end-editing4">Done</button>
+        <p id="edit12"><b> Address</b></p>
+        </label>
+        <button type="submit" id="edit-button4">Edit</button>
+        <button type="submit" id="end-editing4" (click) = "Submit()">Done</button>
+        <button (click) = "Submit()">submit</button>
     </div>
-</div>
+    </div>
+    </div>
+    <div class="column" style="background-color:#eee;">
+        <div class="card">
+            <div class="card-header text-white bg-dark">
+                Contact Info Section
+              </div>
+              <div class="card-body">
+        <label>
+            Personal Email:
+        <p id="edit5"><b> {{email}}</b></p>
+        </label>
+        <br>
+        <label>
+            Work Email:
+        <p id="edit6"><b> {{email}}</b></p>
+        </label>
+        <br>
+        <label>
+            Cellphone,:
+        <p id="edit7"><b> {{telName}}</b></p>
+        </label>
+        <br>
+        <label>
+            Work phone:
+        <p id="edit8"><b> {{workPhone}}</b></p>
+        </label>
+        <button type="submit" id="edit-button2">Edit</button>
+        <button type="submit" id="end-editing2" (click) = "Submit()">Done</button>
+        </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Document Section
+              </div>
+              <div class="card-body">
+        <button type="submit" id="edit-button2">Edit</button>
+        <button type="submit" id="end-editing2" (click) = "Submit()">Done</button>
+        </div>
+        </div>
+       
+    </div>
+    </div> 
 
 

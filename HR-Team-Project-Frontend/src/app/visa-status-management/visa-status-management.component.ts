@@ -17,12 +17,12 @@ export class VisaStatusManagementComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['visaManage/one']);
+    this.router.navigate(['visaManage/1']);
     /*let headers = new HttpHeaders({
       "Allow-Cross-Origin-Origin0": "*" });
     let options = { headers: headers };
 
-    let endpoint = "http://localhost:8080/getNextStatus";
+    let endpoint = "http://localhost:8080/getNextStatus"; 
 
     this.http.get<any>(endpoint, options).subscribe(data => 
     {

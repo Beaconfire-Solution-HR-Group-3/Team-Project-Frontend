@@ -37,7 +37,7 @@ export class FourUploadI20Component implements OnInit {
   }
 
   Next(){
-      this.router.navigate(['visaManage/five']);
+      this.router.navigate(['visaManage/5']);
   }
 
   showFunc(){

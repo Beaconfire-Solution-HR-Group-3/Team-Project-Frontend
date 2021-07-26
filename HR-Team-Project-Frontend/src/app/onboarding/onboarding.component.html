@@ -160,14 +160,18 @@
         <div id="notCitizen" hidden>
           <label>
             What is your work authiruzation?*
-           <select name="workauth" id="workauth">
-             <option value="1">F1(CPT|OPT)</option>
-             <option value="2">H1-B</option>
-             <option value="3">L2</option>
-             <option value="4">H4</option>
-             <option value="2">Other</option>
+           <select name="workauth" id="workauth" [(ngModel)]="visaType">
+             <option value="F1(CPT|OPT)">F1(CPT|OPT)</option>
+             <option value="H1-B">H1-B</option>
+             <option value="L2">L2</option>
+             <option value="H4">H4</option>
+             <option value="Other" [(ngModel)]="isOther">Other</option>
            </select>
            </label>
+           <label *ngIf="isOther == 'Other'">
+            work authorization type:
+            <input type="text" name="workAuthOther" [(ngModel)]="workAuthOther">
+          </label>
            <label>
             Start Date:
             <input type="date" name="sday"[(ngModel)]="sday">

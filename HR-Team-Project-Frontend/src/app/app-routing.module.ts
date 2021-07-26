@@ -36,27 +36,27 @@ const routes: Routes = [
   {path: 'visaManage', component: VisaStatusManagementComponent,
     children: [
       {
-        path: "one",
+        path: "1",
         component: OneOptEadComponent
       },
       {
-        path: "two",
+        path: "2",
         component: TwoFill983Component
       },
       {
-        path: "three",
+        path: "3",
         component: ThreeWait983Component
       },
       {
-        path: "four",
+        path: "4",
         component: FourUploadI20Component
       },
       {
-        path: "five",
+        path: "5",
         component: FiveOptStemComponent
       },
       {
-        path: "six",
+        path: "6",
         component: SixOptStemEadComponent
       },
       {

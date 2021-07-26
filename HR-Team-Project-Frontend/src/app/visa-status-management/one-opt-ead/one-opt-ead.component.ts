@@ -36,7 +36,7 @@ export class OneOptEadComponent implements OnInit {
   }
 
   Next(){
-      this.router.navigate(['visaManage/two']);
+      this.router.navigate(['visaManage/2']);
   }
 
   showFunc(){

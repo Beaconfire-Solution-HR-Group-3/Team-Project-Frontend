@@ -11,7 +11,7 @@ export class SharedServiceService {
   
   constructor() { 
     this.username = "";
-    this.email = "hannah@gmail.com";
+    this.email = "HannahChen@gmail.com";
   }
   
 }

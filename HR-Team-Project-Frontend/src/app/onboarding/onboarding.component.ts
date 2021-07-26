@@ -11,27 +11,26 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class OnboardingComponent implements OnInit {
 
-  email:string
+   email:string
   filedata:any
-  firstName:string
-  lastName:string
-  middleName:string
-  preferName:string
-  addressLine1:string
-  addressLine2:string
-  city:string
-  stateAbbr:string
-  stateName:string
-  zipCode:string
-  tel:string
-  workPhone:string
-  ssn:string
-  bday:string
-  gender:string
-  telName: string
+   firstName:string
+   lastName:string
+   middleName:string
+   preferName:string
+   addressLine1:string
+   addressLine2:string
+   city:string
+   stateAbbr:string
+   stateName:string
+   zipCode:string
+   workPhone:string
+   ssn:string
+   bday:string
+   gender:string
+   telName: string
   file: string
-  sday:string
-  eday:string
+   sday:string
+   eday:string
   workfile:string
   isGreenCard:boolean = false;
   isDriveLicense:string = "";
@@ -44,12 +43,15 @@ export class OnboardingComponent implements OnInit {
   reftelName:string;
   refemail:string;
   relationship:string;
-  emfirstName:string;
-  emmiddleName:string;
-  emlastName:string;
-  emtelName:string;
-  ememail:string;
+   emfirstName:string;
+   emmiddleName:string;
+   emlastName:string;
+   emtelName:string;
+   ememail:string;
   emrelationship:string;
+   visaType:string;
+  isOther:string = "";
+  workAuthOther:string;
 
   constructor(private http: HttpClient, private router: Router, private sharedServiceService :SharedServiceService) 
   {
@@ -64,7 +66,6 @@ export class OnboardingComponent implements OnInit {
     this.stateAbbr="";
     this.stateName="";
     this.zipCode="";
-    this.tel="";
     this.workPhone="";
     this.ssn="";
     this.bday="";
@@ -89,6 +90,8 @@ export class OnboardingComponent implements OnInit {
     this.emtelName="";
     this.ememail="";
     this.emrelationship="";
+    this.visaType="";
+    this.workAuthOther="";
   }
 
   ngOnInit(): void {
@@ -103,19 +106,59 @@ export class OnboardingComponent implements OnInit {
 
     let endpoint = "http://localhost:8080/register";
 
+    if(this.workAuthOther != ""){
+      this.visaType=this.workAuthOther;
+    }
+
     this.http.post<any>(endpoint, 
     {"email": this.email,
     "firstName": this.firstName, 
+    "middleName": this.middleName,
     "lastName": this.lastName,
     "preferedName": this.preferName,
     "alternatePhone": this.workPhone,
-    "cellphone": this.tel,
+    "cellphone": this.telName,
     "ssn": this.ssn,
-    "dbay": this.bday,
-    "gender": this.gender
+    "dob": this.bday,
+    "gender": this.gender,
+    "startDate": this.sday,
+    "endDate": this.eday,
+    "driverLisence": this.driveLicense,
+    "contactList":[{
+        "fisrtName": this.emfirstName,
+        "lastName": this.emlastName,
+        "email": this.ememail,
+        "cellphone": this.emtelName,
+        "relationship": this.emrelationship,
+        "isReference": false,
+        "isEmergency": true
+    },
+    {
+      "fisrtName": this.reffirstName,
+      "lastName": this.reflastName,
+      "email": this.refemail,
+      "cellphone": this.reftelName,
+      "relationship": this.relationship,
+      "isReference": true,
+      "isEmergency": false
+    }
+  ],
+    "visaStatus":{
+      "visaType": this.visaType,
+      "visaStartDate": this.sday,
+      "visaEndDate": this.eday,
+    },
+    "address": {
+        "addressLine1": this.addressLine1,
+        "addressLine2": this.addressLine2,
+        "city": this.city,
+        "stateAbbr": this.stateAbbr,
+        "stateName": this.stateName,
+        "zipCode": this.zipCode
+        }
   }, options).subscribe(data => 
     console.log(data));
-    this.router.navigate(['documents']);
+    this.router.navigate(['visaManage/1']);
 
   }
 

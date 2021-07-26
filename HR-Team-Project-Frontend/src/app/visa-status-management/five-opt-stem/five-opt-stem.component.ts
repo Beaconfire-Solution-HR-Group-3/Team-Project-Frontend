@@ -37,7 +37,7 @@ export class FiveOptStemComponent implements OnInit {
   }
 
   Next(){
-      this.router.navigate(['visaManage/six']);
+      this.router.navigate(['visaManage/6']);
   }
 
   showFunc(){

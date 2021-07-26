@@ -36,7 +36,7 @@ export class ThreeWait983Component implements OnInit {
   }
 
   Next(){
-      this.router.navigate(['visaManage/four']);
+      this.router.navigate(['visaManage/4']);
   }
 
   showFunc(){

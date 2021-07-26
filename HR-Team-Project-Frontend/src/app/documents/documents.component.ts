@@ -28,7 +28,8 @@ export class DocumentsComponent implements OnInit {
 
     this.http.get<any>(endpoint, options).subscribe(data => 
     { 
-      data.forEach((element: document) => {
+      data.forEach(
+        (element: document) => {
         this.documentList.push(element);
       });
       
