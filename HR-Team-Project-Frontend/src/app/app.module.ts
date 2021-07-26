@@ -24,6 +24,9 @@ import { FourUploadI20Component } from './visa-status-management/four-upload-i20
 import { FiveOptStemComponent } from './visa-status-management/five-opt-stem/five-opt-stem.component';
 import { SixOptStemEadComponent } from './visa-status-management/six-opt-stem-ead/six-opt-stem-ead.component';
 import { FinalComponent } from './visa-status-management/final/final.component';
+import { HrhomepageComponent } from './hrhomepage/hrhomepage.component';
+import { HremployeeprofileComponent } from './hremployeeprofile/hremployeeprofile.component';
+import { HrapplicationComponent } from './hrapplication/hrapplication.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { FinalComponent } from './visa-status-management/final/final.component';
     FiveOptStemComponent,
     SixOptStemEadComponent,
     FinalComponent,
+    HrhomepageComponent,
+    HremployeeprofileComponent,
+    HrapplicationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<p>hrhomepage works!</p>
+<script>
+  $(document).ready(function() {
+    $('table.display').DataTable();
+} );  
+</script>
+<table>
+    <thead>
+        <tr>
+            <th>Name (Legal full name)</th>
+            <th>Work Authorization</th>
+            <th>Expiration Date</th>
+            <th> Day Left`</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.name}}</td>
+            <td>{{item.workauth}}</td>
+            <td>{{item.experationdate}}</td>
+            <td>{{item.dayleft}}</td>
+            <td><button>send notifacation</button></td>
+        </tr>
+    </tbody>
+</table>
