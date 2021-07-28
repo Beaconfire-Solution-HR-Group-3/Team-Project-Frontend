@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
+import { SharedServiceService } from '../service/shared-service.service';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-onboarding',
@@ -9,29 +11,87 @@ import {HttpHeaders} from '@angular/common/http';
 })
 export class OnboardingComponent implements OnInit {
 
-  email:string
+   email:string
   filedata:any
-  firstName:string
-  lastName:string
-  preferName:string
-  tel:string
-  ssn:string
-  bday:string
-  gender:string
-  telName: string
+   firstName:string
+   lastName:string
+   middleName:string
+   preferName:string
+   addressLine1:string
+   addressLine2:string
+   city:string
+   stateAbbr:string
+   stateName:string
+   zipCode:string
+   workPhone:string
+   ssn:string
+   bday:string
+   gender:string
+   telName: string
   file: string
-  constructor(private http: HttpClient) 
+   sday:string
+   eday:string
+  workfile:string
+  isGreenCard:boolean = false;
+  isDriveLicense:string = "";
+  driveNumber:string;
+  expiraDay:string;
+  driveLicense:string;
+  reffirstName:string;
+  refmiddleName:string;
+  reflastName:string;
+  reftelName:string;
+  refemail:string;
+  relationship:string;
+   emfirstName:string;
+   emmiddleName:string;
+   emlastName:string;
+   emtelName:string;
+   ememail:string;
+  emrelationship:string;
+   visaType:string;
+  isOther:string = "";
+  workAuthOther:string;
+
+  constructor(private http: HttpClient, private router: Router, private sharedServiceService :SharedServiceService) 
   {
-    this.email="";
+    this.email=this.sharedServiceService.email;
     this.firstName="";
     this.lastName="";
+    this.middleName="";
     this.preferName="";
-    this.tel="";
+    this.addressLine1="";
+    this.addressLine2="";
+    this.city="";
+    this.stateAbbr="";
+    this.stateName="";
+    this.zipCode="";
+    this.workPhone="";
     this.ssn="";
     this.bday="";
     this.gender="";
     this.telName="";
     this.file="";
+    this.sday="";
+    this.eday="";
+    this.workfile="";
+    this.driveNumber="";
+    this.expiraDay="";
+    this.driveLicense="";
+    this.reffirstName="";
+    this.refmiddleName="";
+    this.reflastName="";
+    this.reftelName="";
+    this.refemail="";
+    this.relationship="";
+    this.emfirstName="";
+    this.emmiddleName="";
+    this.emlastName="";
+    this.emtelName="";
+    this.ememail="";
+    this.emrelationship="";
+    this.visaType="";
+    this.workAuthOther="";
   }
 
   ngOnInit(): void {
@@ -46,17 +106,59 @@ export class OnboardingComponent implements OnInit {
 
     let endpoint = "http://localhost:8080/register";
 
+    if(this.workAuthOther != ""){
+      this.visaType=this.workAuthOther;
+    }
+
     this.http.post<any>(endpoint, 
     {"email": this.email,
     "firstName": this.firstName, 
+    "middleName": this.middleName,
     "lastName": this.lastName,
-    "preferName": this.preferName,
-    "tel": this.tel,
+    "preferedName": this.preferName,
+    "alternatePhone": this.workPhone,
+    "cellphone": this.telName,
     "ssn": this.ssn,
-    "dbay": this.bday,
-    "gender": this.gender
+    "dob": this.bday,
+    "gender": this.gender,
+    "startDate": this.sday,
+    "endDate": this.eday,
+    "driverLisence": this.driveLicense,
+    "contactList":[{
+        "fisrtName": this.emfirstName,
+        "lastName": this.emlastName,
+        "email": this.ememail,
+        "cellphone": this.emtelName,
+        "relationship": this.emrelationship,
+        "reference": false,
+        "emergency": true
+    },
+    {
+      "fisrtName": this.reffirstName,
+      "lastName": this.reflastName,
+      "email": this.refemail,
+      "cellphone": this.reftelName,
+      "relationship": this.relationship,
+      "reference": true,
+      "emergency": false
+    }
+  ],
+    "visaStatus":{
+      "visaType": this.visaType,
+      "visaStartDate": this.sday,
+      "visaEndDate": this.eday,
+    },
+    "address": {
+        "addressLine1": this.addressLine1,
+        "addressLine2": this.addressLine2,
+        "city": this.city,
+        "stateAbbr": this.stateAbbr,
+        "stateName": this.stateName,
+        "zipCode": this.zipCode
+        }
   }, options).subscribe(data => 
     console.log(data));
+    this.router.navigate(['visaManage/1']);
 
   }
 

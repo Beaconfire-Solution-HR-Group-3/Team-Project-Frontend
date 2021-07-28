@@ -1,52 +1,322 @@
-<div>
+<div [ngClass]="'centerDiv'" class="container">
+    <div class="row">
     <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <h1 >Application Form</h1>
+        </div>
+        <hr>
+        <div class="row form-group">
+          <div class="col-sm-6 form-group">
+          <label for="email">
+            Your Email:
+          </label>
+            <input type="email" id = "email" name="email" [(ngModel)]="email" disabled>
+          </div>
+          </div>
+      <div class="row form-group">
+        <div class="col-sm-6 form-group">
+          <label>
+            Please Upload your avatar here
+          </label>
+            <input type="file" name="filedata"[(ngModel)]="file">   
+          </div>
+      </div>
+      <hr>
+        <div class="row">
+        <div class="col-sm-3 form-group">
+        <label>
+          First Name*
+        </label>
+          <input type="text" name="firstName"[(ngModel)]="firstName">
+      </div>
+      <div class="col-sm-3 form-group">
+        <label>
+          Middle Name
+        </label>
+          <input type="text" name="middleName"[(ngModel)]="middleName">
+      </div>
+          <div class="col-sm-3 form-group">
+            <label>
+              Last Name*
+            </label>
+              <input type="text" name="lastName"[(ngModel)]="lastName">
+          </div>
+        </div>
+        <div class="row">
+   
+          <div class="col-sm-4 form-group">
+            <label>
+              Prefer Name
+              <input type="text" name="preferName"[(ngModel)]="preferName">
+              <small id="nameHelp" class="form-text text-muted">(English Name or Nick Name)</small>
+            </label>
+          </div>
+          </div>
+        <hr>
+        
+        <h4>Current Address*</h4>
+        <br>
+        <div class="row">
+          <div class="col-sm-3 form-group">
+            <label>
+              Address Line 1
+            </label>
+              <input type="text" name="addressLine1"[(ngModel)]="addressLine1">
+          </div>
+          <div class="col-sm-3 form-group">
+            <label>
+              Address Line 2
+            </label>
+              <input type="text" name="addressLine2"[(ngModel)]="addressLine2">
+          </div>
+          <div class="col-sm-3 form-group">
+            <label>
+              City
+            </label>
+              <input type="text" name="city"[(ngModel)]="city">
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 form-group">
+              <label>
+                State Abbrivate
+              </label>
+                <input type="text" name="stateAbbr"[(ngModel)]="stateAbbr">
+            </div>
+            <div class="col-sm-3 form-group">
+              <label>
+                State Name
+              </label>
+                <input type="text" name="stateName"[(ngModel)]="stateName">
+            </div>
+            <div class="col-sm-3 form-group">
+              <label>
+                Zip Code
+              </label>
+                <input type="text" name="zipCode"[(ngModel)]="zipCode">
+            </div>
+          </div>
+
+  
+    <hr>
+    <div class="row">
+      <div class="col-sm-4 form-group">
       <label>
-        Your Email:
-        <input type="email" name="email" [(ngModel)]="email">
-      </label>
-      <br>
-      <label>
-        Please Upload your avatar here
-        <input type="file" name="filedata"[(ngModel)]="file">
-      </label>
-      <br>
-      <label>
-        First Name
-        <input type="text" name="firstName"[(ngModel)]="firstName">
-      </label>
-      <br>
-      <label>
-        Last Name
-        <input type="text" name="lastName"[(ngModel)]="lastName">
-      </label>
-      <br>
-      <label>
-        Prefer Name
-        <input type="text" name="preferName"[(ngModel)]="preferName">
-      </label>
-      <br>
-      <label>
-        Cell Phone
+        Cell Phone*
         <input type="tel" name="telName"[(ngModel)]="telName">
       </label>
-      <br>
+      </div>
+      <div class="col-sm-4 form-group">
       <label>
-        SSN
+        Work Phone
+        <input type="tel" name="workPhone"[(ngModel)]="workPhone">
+      </label>
+    </div>
+    </div>
+    <hr>
+    <div class="row form-group">
+      <div class="col-sm-3 form-group">
+      <label>
+        SSN*
         <input type="text" name="ssn"[(ngModel)]="ssn">
       </label>
-      <br>
+    </div>
+  </div>
+    <div class="row form-group">
+      <div class="col-sm-6 form-group">
       <label>
-        date of birth:
+        Date of Birth*
         <input type="date" name="bday"[(ngModel)]="bday">
       </label>
-      <br>
+    </div>
+  </div>
+    <div class="row form-group">
+      <div class="col-sm-6 form-group">
       <label>
-        gender:
+        Gender:
         <input type="radio" name="gender" value="female"[(ngModel)]="gender"> female
-        <input type="radio" name="gender" value="male"[(ngModel)]="gender"> male<br>
+        <input type="radio" name="gender" value="male"[(ngModel)]="gender"> male
+        <input type="radio" name="gender" value="unknown"[(ngModel)]="gender">I don’t want to answer<br>
       </label>
-      <br>
-      <button>Submit</button>
+    </div>
+    </div>
+    <hr>
+      <div id="visa">
+        <label>
+         Are you a citizen or permanent resident of the U.S?*
+        <select name="visaOption" id="isCitizen" onchange="addtext()">
+          <option value="1" default>Yes</option>
+          <option value="2">No</option>
+        </select>
+        </label>
+        <div id="itisCitizen">
+          <label>
+            type*
+            <input type="radio" name="isGreenCard" value="False"[(ngModel)]="isGreenCard"> Citizen
+            <input type="radio" name="isGreenCard" value="True"[(ngModel)]="isGreenCard"> Green Card<br>
+          </label>
+          <br>
+        </div>
+        <div id="notCitizen" hidden>
+          <label>
+            What is your work authiruzation?*
+           <select name="workauth" id="workauth" [(ngModel)]="visaType">
+             <option value="F1(CPT|OPT)">F1(CPT|OPT)</option>
+             <option value="H1-B">H1-B</option>
+             <option value="L2">L2</option>
+             <option value="H4">H4</option>
+             <option value="Other" [(ngModel)]="isOther">Other</option>
+           </select>
+           </label>
+           <label *ngIf="isOther == 'Other'">
+            work authorization type:
+            <input type="text" name="workAuthOther" [(ngModel)]="workAuthOther">
+          </label>
+           <label>
+            Start Date:
+            <input type="date" name="sday"[(ngModel)]="sday">
+          </label>
+          <br>
+          <label>
+            End Date:
+            <input type="date" name="eday"[(ngModel)]="eday">
+          </label>
+          <br>
+          <label>
+            Please Upload your work authorization
+            <input type="file" name="workfile"[(ngModel)]="workfile">
+          </label>
+          <br>
+        </div>
+        <hr>
+        <div class="row form-group">
+          <div class="col-sm-6 form-group">
+          <label>
+            Do you have a drive license?*
+            <input type="radio" name="isDriveLicense" value="no" [(ngModel)]="isDriveLicense"> No
+            <input type="radio" name="isDriveLicense" value="yes" [(ngModel)]="isDriveLicense"> Yes<br>
+          </label>
+        <br>
+        <div *ngIf="isDriveLicense == 'yes'">
+          <label>
+            Drive License Number
+            <input type="text" name="driveNumber"[(ngModel)]="driveNumber">
+          </label>
+          <br>
+          <label>
+            Expiration Date
+            <input type="date" name="expiraDay"[(ngModel)]="expiraDay">
+          </label>
+          <br>
+          <label>
+            Please upload a copy of drive license
+            <input type="file" name="driveLicense"[(ngModel)]="driveLicense">
+          </label>
+          <br>
+        </div>
+        </div>
+        </div>
+        <hr>
+        
+          <h4>Reference</h4>
+          <br>
+          
+          <div class="row ">
+            <div class="col-sm-3 form-group">
+          <label>
+            First Name
+            <input type="text" name="reffirstName"[(ngModel)]="reffirstName">
+          </label>
+        </div>
+        <div class="col-sm-3 form-group">
+          <label>
+            Middle Name
+            <input type="text" name="refmiddleName"[(ngModel)]="refmiddleName">
+          </label>
+        </div>
+        <div class="col-sm-3 form-group">
+          <label>
+            Last Name
+            <input type="text" name="reflastName"[(ngModel)]="reflastName">
+          </label>
+        </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-sm-3 form-group">
+          <label>
+            Cell Phone
+            <input type="tel" name="reftelName"[(ngModel)]="reftelName">
+          </label>
+          </div>
+        </div>
+          <div class="row form-group">
+            <div class="col-sm-3 form-group">
+          <label>
+            Email
+            <input type="email" name="refemail" [(ngModel)]="refemail">
+          </label>
+          </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-sm-3 form-group">
+          <label>
+            Relationship
+            <input type="text" name="relationship" [(ngModel)]="relationship">
+          </label>
+          </div>
+          </div>
+        <hr>
+        <h4>Emergency Contact*</h4>
+          <br>
+        <div class="row">
+          <div class="col-sm-3 form-group"> 
+          <label>
+            First Name
+            <input type="text" name="emfirstName"[(ngModel)]="emfirstName">
+          </label>
+          </div>
+          <div class="col-sm-3 form-group">
+          <label>
+            Middle Name
+            <input type="text" name="emmiddleName"[(ngModel)]="emmiddleName">
+          </label>
+          </div>
+          <div class="col-sm-3 form-group">
+          <label>
+            Last Name
+            <input type="text" name="emlastName"[(ngModel)]="emlastName">
+          </label>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 form-group">
+          <label>
+            Cell Phone
+            <input type="tel" name="emtelName"[(ngModel)]="emtelName">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 form-group">
+          <label>
+            Email
+            <input type="email" name="ememail" [(ngModel)]="ememail">
+          </label>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 form-group">
+          <label>
+            Relationship
+            <input type="text" name="emrelationship" [(ngModel)]="emrelationship">
+          </label>
+          </div>
+          </div>
+
+      </div>
+      <button class="btn btn-dark">Submit</button>
     </form>
+
+</div>
   </div>
   

@@ -1,0 +1,33 @@
+.centerDiv {
+    background-color: #d6dacc;
+    width: 100%;
+    color: #333333;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    float: none;
+    overflow: scroll;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .card {
+    top:auto;
+    margin: 15px auto;
+  }

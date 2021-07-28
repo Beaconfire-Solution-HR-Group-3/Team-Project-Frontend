@@ -1,11 +1,12 @@
-<div>
+<div [ngClass]="'centerDiv'">
     <form #myForm="ngForm" (ngSubmit)="onSubmit()">
-      <label>
-        token:
-        <input type="text" name="token" [(ngModel)]="token">
-      </label>
-      <br>
-      <button>next</button>
+      <div class="form-group">
+      <label for="token">
+        Please enter your token:
+        </label>
+        <input type="text" class="form-control" id = "token" name="token" placeholder="token" [(ngModel)]="token">
+    </div>
+      <button class="btn btn-dark">next</button>
     </form>
   </div>
   

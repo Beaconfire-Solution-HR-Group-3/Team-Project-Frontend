@@ -1,0 +1,25 @@
+
+
+
+
+
+<div [ngClass]="'centerDiv'">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <h4>facility Comment</h4>
+        <div class="form-group">
+            Comment:
+            <ul>
+                <li *ngFor="let item of details">
+                    {{item.comments}}
+                    Hannah
+                    {{item.createDate}}
+                </li>
+            </ul>
+        </div>
+        <label>
+          Comment:
+          <input type="text" name="comment" [(ngModel)]="comment">
+        </label>
+        <button class="btn btn-dark" type="submit" id="button">Add Comment</button>
+      </form>
+</div>

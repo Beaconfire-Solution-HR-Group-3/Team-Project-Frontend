@@ -1,0 +1,29 @@
+.centerDiv {
+    background-color: #d6dacc;
+    width: 100%;
+    color: #333333;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-around;
+    float: none;
+    display: flex;
+    overflow: scroll;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }

@@ -1,0 +1,28 @@
+<div [ngClass]="'centerDiv'">
+    <form #myForm="ngForm" >
+    <div class="row form-group">
+        <h2>Your Address:</h2>
+        <br>
+    </div>
+    <div class="row form-group">
+        <h4> {{address}} </h4>
+        <br>
+    </div>
+<hr>
+    <div class="row form-group">
+        <h2>Room Members:</h2>
+        <br>
+    </div>
+    <div class="row form-group">
+        <ul>
+            <li *ngFor="let info of employeeList">
+                <b>Name</b>: {{info.firstName}}, {{info.lastName}}
+                <b>Cellphone</b>: {{info.cellphone}}
+            </li>
+        </ul>
+    </div>
+    </form> 
+</div>
+
+
+

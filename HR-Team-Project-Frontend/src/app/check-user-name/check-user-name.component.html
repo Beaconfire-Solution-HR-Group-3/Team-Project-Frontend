@@ -1,4 +1,4 @@
-<div>
+<div [ngClass]="'centerDiv'">
     <form #myForm="ngForm" (ngSubmit)="onSubmit()">
       <label>
         username:
@@ -15,22 +15,9 @@
         <input type="password" name="confirm" id="pw2" onkeyup="validate()">
       </label>
       <br>
-      <button disabled id="button">next</button>
+      <button disabled class="btn btn-dark" id="button">next</button>
     </form>
   </div>
   
 
-  <script>
-    function validate() {
-    var pw1 = document.getElementById("pw1").value;
-    var pw2 = document.getElementById("pw2").value;
-    if(pw1 == pw2) {
-    
-    document.getElementById("button").disabled = false;
-    }
-    else {
-    
-    document.getElementById("button").disabled = true;
-     }
-    }
-    </script>
+ 
