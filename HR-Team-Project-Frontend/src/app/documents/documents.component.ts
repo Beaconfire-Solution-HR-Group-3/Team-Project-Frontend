@@ -68,7 +68,6 @@ export class DocumentsComponent implements OnInit {
         formData.append('email', this.sharedServiceService.email);
         this.http.post(endpoint, formData, {headers: new HttpHeaders()
             .append("Content-Type", "multipart/form-data")
-            .append('Accept', 'application/json')
             .append("Access-Control-Allow-Origin", "*")})
             .subscribe(
                 data => console.log('success'),

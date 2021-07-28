@@ -17,6 +17,20 @@ export class VisaStatusManagementComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // let headers1 = new HttpHeaders({
+    //   "Access-Control-Allow-Origin": "*"
+    // });
+    // let options1 = { headers: headers1 };
+
+    // let endpoint1 = "http://localhost:8080/employee";
+
+    // this.http.get<any>(endpoint1, options1).subscribe(data => 
+    // { 
+    //     if(data.success == false){
+    //       window.location.href="http://localhost:4201/login?redirect="+data.message;
+    //     }
+    // });
+
     this.router.navigate(['visaManage/1']);
     /*let headers = new HttpHeaders({
       "Allow-Cross-Origin-Origin0": "*" });

@@ -8,10 +8,12 @@ export class SharedServiceService {
   
   username: string;
   email: string;
+  reportId:number;
   
   constructor() { 
-    this.username = "";
+    this.username = "Hannah";
     this.email = "HannahChen@gmail.com";
+    this.reportId = 1;
   }
   
 }

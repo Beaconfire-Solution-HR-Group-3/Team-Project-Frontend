@@ -27,6 +27,7 @@ import { FinalComponent } from './visa-status-management/final/final.component';
 import { HrhomepageComponent } from './hrhomepage/hrhomepage.component';
 import { HremployeeprofileComponent } from './hremployeeprofile/hremployeeprofile.component';
 import { HrapplicationComponent } from './hrapplication/hrapplication.component';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { HrapplicationComponent } from './hrapplication/hrapplication.component'
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
+    AngularFileUploaderModule,
   ],
   providers: [
     SharedServiceService,

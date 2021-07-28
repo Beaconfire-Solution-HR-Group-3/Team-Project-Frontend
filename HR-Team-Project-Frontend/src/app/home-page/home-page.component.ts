@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedServiceService } from '../service/shared-service.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  userName:string;
+
+  constructor(private sharedServiceService :SharedServiceService) { 
+    this.userName = sharedServiceService.username;
+  }
 
   ngOnInit(): void {
   }

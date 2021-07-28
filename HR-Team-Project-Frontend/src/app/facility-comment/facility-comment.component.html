@@ -1,27 +1,25 @@
-<!-- <p>facility-comment works!</p>
 
-<div>Title：{{}}</div>
-<div>Description：{{}}</div>
-<div>Create by：{{}}</div>
-<div>Report Date{{}}</div>
-<div>Status{{}}</div>
-<div>
-    Comment:
-    <ul>
-        <li *ngFor="let item of comments">
-            {{item.content}}
-            {{item.createby}}
-            {{item.date}}
-        </li>
-    </ul>
-</div>
 
-<div>
+
+
+
+<div [ngClass]="'centerDiv'">
     <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <h4>facility Comment</h4>
+        <div class="form-group">
+            Comment:
+            <ul>
+                <li *ngFor="let item of details">
+                    {{item.comments}}
+                    Hannah
+                    {{item.createDate}}
+                </li>
+            </ul>
+        </div>
         <label>
           Comment:
           <input type="text" name="comment" [(ngModel)]="comment">
         </label>
-        <button disabled class="btn btn-dark" id="button">Add Comment</button>
+        <button class="btn btn-dark" type="submit" id="button">Add Comment</button>
       </form>
-</div> -->
+</div>

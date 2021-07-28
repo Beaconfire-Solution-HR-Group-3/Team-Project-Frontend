@@ -110,6 +110,29 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // let headers1 = new HttpHeaders({
+    //   "Access-Control-Allow-Origin": "*"
+    // });
+    // let options1 = { headers: headers1 };
+
+    // let endpoint1 = "http://localhost:8080/employee";
+
+    // console.log("test!!!!!!!!");
+    // this.http.get<any>(endpoint1, options1).subscribe(data => 
+    // {  
+      
+    //   console.log(data);
+    //     if(data.success == false){
+    //       window.location.href="http://localhost:4201/login?redirect="+data.message;
+    //     }
+    // }, error =>{
+    //   console.log(error);
+    //   window.location.href="http://localhost:4201/login?redirect=http://localhost:4200'";
+    // });
+
+  
+
     let headers = new HttpHeaders({
       "Access-Control-Allow-Origin": "*"
     });
